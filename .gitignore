@@ -1,0 +1,4 @@
+*.xcuserdatad
+xcuserdata/
+KoombeasFighters.xcodeproj/project.xcworkspace/xcuserdata
+KoombeasFighters.xcodeproj/xcshareddata
