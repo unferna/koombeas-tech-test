@@ -63,7 +63,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func setHomeAsRoot() {
         let storyboard = UIStoryboard(name: "HomeViewController", bundle: nil)
-        let rootVC = storyboard.instantiateInitialViewController() as? HomeViewController
+        let rootVC = storyboard.instantiateInitialViewController() as? UINavigationController
         
         self.window?.rootViewController = rootVC
         self.window?.makeKeyAndVisible()

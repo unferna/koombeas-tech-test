@@ -25,8 +25,7 @@ class OnboardingViewController: UIViewController {
         // Setup UI
         setupCollection()
         
-        let doneButtonWidth = doneButton.bounds.width
-        doneButton.layer.cornerRadius = doneButtonWidth / 2
+        doneButton.circle()
         doneButton.alpha = 0
     }
     

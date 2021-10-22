@@ -25,6 +25,16 @@
 		A83EADFB27235CC6000707E9 /* DataKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83EADFA27235CC6000707E9 /* DataKeys.swift */; };
 		A83EADFE27235E8B000707E9 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A83EADFD27235E8B000707E9 /* HomeViewController.storyboard */; };
 		A83EAE0027235E98000707E9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83EADFF27235E98000707E9 /* HomeViewController.swift */; };
+		A83EAE02272364E3000707E9 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A83EAE01272364E3000707E9 /* Roboto-Medium.ttf */; };
+		A83EAE04272367A1000707E9 /* UIVIew+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83EAE03272367A1000707E9 /* UIVIew+Extensions.swift */; };
+		A83EAE0827236B03000707E9 /* UniverseSelectorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83EAE0627236B03000707E9 /* UniverseSelectorTableViewCell.swift */; };
+		A83EAE0927236B03000707E9 /* UniverseSelectorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83EAE0727236B03000707E9 /* UniverseSelectorTableViewCell.xib */; };
+		A83EAE0C27236B23000707E9 /* UniverseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83EAE0A27236B23000707E9 /* UniverseCollectionViewCell.swift */; };
+		A83EAE0D27236B23000707E9 /* UniverseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83EAE0B27236B23000707E9 /* UniverseCollectionViewCell.xib */; };
+		A83EAE1127236B4B000707E9 /* FighterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83EAE0F27236B4B000707E9 /* FighterTableViewCell.swift */; };
+		A83EAE1227236B4B000707E9 /* FighterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83EAE1027236B4B000707E9 /* FighterTableViewCell.xib */; };
+		A83EAE142723713A000707E9 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83EAE132723713A000707E9 /* UITableView+Extensions.swift */; };
+		A83EAE1627237F38000707E9 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A83EAE1527237F38000707E9 /* Roboto-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +77,16 @@
 		A83EADFA27235CC6000707E9 /* DataKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataKeys.swift; sourceTree = "<group>"; };
 		A83EADFD27235E8B000707E9 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
 		A83EADFF27235E98000707E9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A83EAE01272364E3000707E9 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		A83EAE03272367A1000707E9 /* UIVIew+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew+Extensions.swift"; sourceTree = "<group>"; };
+		A83EAE0627236B03000707E9 /* UniverseSelectorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniverseSelectorTableViewCell.swift; sourceTree = "<group>"; };
+		A83EAE0727236B03000707E9 /* UniverseSelectorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UniverseSelectorTableViewCell.xib; sourceTree = "<group>"; };
+		A83EAE0A27236B23000707E9 /* UniverseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniverseCollectionViewCell.swift; sourceTree = "<group>"; };
+		A83EAE0B27236B23000707E9 /* UniverseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UniverseCollectionViewCell.xib; sourceTree = "<group>"; };
+		A83EAE0F27236B4B000707E9 /* FighterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FighterTableViewCell.swift; sourceTree = "<group>"; };
+		A83EAE1027236B4B000707E9 /* FighterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FighterTableViewCell.xib; sourceTree = "<group>"; };
+		A83EAE132723713A000707E9 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		A83EAE1527237F38000707E9 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +212,8 @@
 		A83EADE7272346B8000707E9 /* Roboto */ = {
 			isa = PBXGroup;
 			children = (
+				A83EAE1527237F38000707E9 /* Roboto-Bold.ttf */,
+				A83EAE01272364E3000707E9 /* Roboto-Medium.ttf */,
 				A83EADE8272346C9000707E9 /* Roboto-Regular.ttf */,
 			);
 			path = Roboto;
@@ -221,6 +243,8 @@
 			children = (
 				A83EADF327235129000707E9 /* CarouselCollectionLayout.swift */,
 				A83EADF52723523F000707E9 /* UICollectionView+Extensions.swift */,
+				A83EAE132723713A000707E9 /* UITableView+Extensions.swift */,
+				A83EAE03272367A1000707E9 /* UIVIew+Extensions.swift */,
 			);
 			path = "Helpers & Extensions";
 			sourceTree = "<group>";
@@ -228,10 +252,32 @@
 		A83EADF727235C14000707E9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A83EAE0527236AC8000707E9 /* UniverseSelector */,
+				A83EAE0E27236B31000707E9 /* Fighter */,
 				A83EADFD27235E8B000707E9 /* HomeViewController.storyboard */,
 				A83EADFF27235E98000707E9 /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		A83EAE0527236AC8000707E9 /* UniverseSelector */ = {
+			isa = PBXGroup;
+			children = (
+				A83EAE0627236B03000707E9 /* UniverseSelectorTableViewCell.swift */,
+				A83EAE0727236B03000707E9 /* UniverseSelectorTableViewCell.xib */,
+				A83EAE0A27236B23000707E9 /* UniverseCollectionViewCell.swift */,
+				A83EAE0B27236B23000707E9 /* UniverseCollectionViewCell.xib */,
+			);
+			path = UniverseSelector;
+			sourceTree = "<group>";
+		};
+		A83EAE0E27236B31000707E9 /* Fighter */ = {
+			isa = PBXGroup;
+			children = (
+				A83EAE0F27236B4B000707E9 /* FighterTableViewCell.swift */,
+				A83EAE1027236B4B000707E9 /* FighterTableViewCell.xib */,
+			);
+			path = Fighter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,9 +387,14 @@
 				A83EADE1272341EC000707E9 /* OnboardingViewController.storyboard in Resources */,
 				A83EADF12723502F000707E9 /* OnboardingSlideCollectionViewCell.xib in Resources */,
 				A83EADFE27235E8B000707E9 /* HomeViewController.storyboard in Resources */,
+				A83EAE02272364E3000707E9 /* Roboto-Medium.ttf in Resources */,
+				A83EAE1627237F38000707E9 /* Roboto-Bold.ttf in Resources */,
 				A83EADBD272341AA000707E9 /* LaunchScreen.storyboard in Resources */,
+				A83EAE0D27236B23000707E9 /* UniverseCollectionViewCell.xib in Resources */,
+				A83EAE0927236B03000707E9 /* UniverseSelectorTableViewCell.xib in Resources */,
 				A83EADE9272346C9000707E9 /* Roboto-Regular.ttf in Resources */,
 				A83EADBA272341AA000707E9 /* Assets.xcassets in Resources */,
+				A83EAE1227236B4B000707E9 /* FighterTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,13 +420,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				A83EADF62723523F000707E9 /* UICollectionView+Extensions.swift in Sources */,
+				A83EAE142723713A000707E9 /* UITableView+Extensions.swift in Sources */,
 				A83EADB1272341A7000707E9 /* AppDelegate.swift in Sources */,
 				A83EADF02723502F000707E9 /* OnboardingSlideCollectionViewCell.swift in Sources */,
 				A83EADF427235129000707E9 /* CarouselCollectionLayout.swift in Sources */,
 				A83EADB3272341A7000707E9 /* SceneDelegate.swift in Sources */,
+				A83EAE0827236B03000707E9 /* UniverseSelectorTableViewCell.swift in Sources */,
+				A83EAE1127236B4B000707E9 /* FighterTableViewCell.swift in Sources */,
 				A83EAE0027235E98000707E9 /* HomeViewController.swift in Sources */,
+				A83EAE04272367A1000707E9 /* UIVIew+Extensions.swift in Sources */,
 				A83EADF927235C6D000707E9 /* LocalStorage.swift in Sources */,
 				A83EADEB27234B3A000707E9 /* OnboardingViewController.swift in Sources */,
+				A83EAE0C27236B23000707E9 /* UniverseCollectionViewCell.swift in Sources */,
 				A83EADFB27235CC6000707E9 /* DataKeys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
