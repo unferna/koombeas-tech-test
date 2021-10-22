@@ -7,11 +7,17 @@
 
 import UIKit
 
+protocol OnboardingViewControllerDelegate: NSObjectProtocol {
+    func markOnboardingAsSeen()
+}
+
 class OnboardingViewController: UIViewController {
     @IBOutlet weak var slidesCollection: UICollectionView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
+    
+    weak var delegate: OnboardingViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +69,7 @@ class OnboardingViewController: UIViewController {
     }
     
     @IBAction func didTapDone(_ sender: UIButton) {
-        print("Did tap done")
+        delegate?.markOnboardingAsSeen()
     }
     
     func toggleDoneButton(show: Bool) {
