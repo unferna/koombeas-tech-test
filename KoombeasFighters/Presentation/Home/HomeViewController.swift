@@ -11,6 +11,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
+    private let refreshControl = UIRefreshControl()
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -41,6 +43,11 @@ class HomeViewController: UIViewController {
         currentInset.top = 60
         
         tableView.contentInset = currentInset
+        
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        
+        tableView.addSubview(refreshControl)
     }
     
     func reloadData() {
@@ -54,6 +61,10 @@ class HomeViewController: UIViewController {
         filterVC.delegate = self
         filterVC.currentFilter = currentFilter
         present(filterVC, animated: true)
+    }
+    
+    @objc func refresh(_ any: UIRefreshControl) {
+        reloadData()
     }
     
     func sortFighters() {
@@ -104,6 +115,7 @@ extension HomeViewController: HomeView {
         self.universes = universes
         self.fighters = fighters
         tableView.reloadData()
+        refreshControl.endRefreshing()
     }
     
     func showError(error: GeneralError) {
