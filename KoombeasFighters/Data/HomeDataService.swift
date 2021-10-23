@@ -70,12 +70,18 @@ class HomeDataService {
                 }
             
             } else {
+                LocalStorage.shared.saveUniverseSelection(withValue)
+                
                 let encodedParam = withValue.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
                 fightersAPI += "?universe=\( encodedParam ?? "" )"
             }
         }
         
         if networkMonitor.isReachable {
+            if filteredBy == .all {
+                LocalStorage.shared.saveUniverseSelection("")
+            }
+            
             network.request(url: fightersAPI, completion: { data in
                 do {
                     let fighters = try JSONDecoder().decode([Fighter].self, from: data)

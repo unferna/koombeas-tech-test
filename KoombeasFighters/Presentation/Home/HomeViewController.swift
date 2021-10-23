@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noInternetWarningView: UIView!
+    @IBOutlet weak var errorLabel: UILabel!
     
     private let networkMonitor = NetworkMonitor.shared
     private var cancellable: Cancellable!
@@ -23,6 +24,7 @@ class HomeViewController: UIViewController {
     
     var universes: [Universe] = []
     var fighters: [Fighter] = []
+    var universeNameSelected = ""
     
     var currentFilter: (sorting: SortItemsData, rate: Int) = (sorting: .none, rate: 0)
     
@@ -40,6 +42,8 @@ class HomeViewController: UIViewController {
         noInternetWarningView.isHidden = networkMonitor.isReachable
         
         headerView.addShadow(color: UIColor(red: 0, green: 0, blue: 0, alpha: 0.24), blur: 4, position: CGPoint(x: 0, y: 6))
+        
+        universeNameSelected = LocalStorage.shared.universeSelection
         
         setupTable()
         reloadData()
@@ -133,7 +137,10 @@ extension HomeViewController: HomeView {
     }
     
     func showError(error: GeneralError) {
-        print(error)
+        switch error {
+            case .message(let string):
+                errorLabel.text = string
+        }
     }
 }
 
@@ -154,7 +161,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusable(for: indexPath) as UniverseSelectorTableViewCell
             cell.delegate = self
-            cell.setUniverses(universes)
+            cell.setUniverses(universes, selected: universeNameSelected)
             
             return cell
         }

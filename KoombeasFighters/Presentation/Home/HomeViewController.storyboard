@@ -123,6 +123,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="BdQ-2t-RbO"/>
                     <connections>
+                        <outlet property="errorLabel" destination="Ywe-4F-bl7" id="CvP-Kx-4kb"/>
                         <outlet property="headerView" destination="w9i-aA-d1k" id="FY9-VI-S5N"/>
                         <outlet property="noInternetWarningView" destination="cbh-bq-TYm" id="Dg8-OQ-NYa"/>
                         <outlet property="tableView" destination="SWr-OI-Ir3" id="Jkm-LY-ETP"/>

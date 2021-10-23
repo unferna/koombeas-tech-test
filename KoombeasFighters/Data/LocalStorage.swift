@@ -17,12 +17,21 @@ class LocalStorage {
         return seen
     } ()
     
+    public lazy var universeSelection: String = {
+        guard let universeName = UserDefaults.standard.value(forKey: DataKeys.universeSelected) as? String else { return "" }
+        return universeName
+    } ()
+    
     public func markOnboardingAsSeen() {
         UserDefaults.standard.set(true, forKey: DataKeys.onboardingSeen)
     }
     
     public func saveUniverses(_ universes: Data) {
         UserDefaults.standard.set(universes, forKey: DataKeys.cachedUniverses)
+    }
+    
+    public func saveUniverseSelection(_ universeName: String) {
+        UserDefaults.standard.set(universeName, forKey: DataKeys.universeSelected)
     }
     
     public func saveFighters(_ fighters: Data) {

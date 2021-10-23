@@ -42,18 +42,40 @@ class UniverseSelectorTableViewCell: UITableViewCell {
         }
     }
     
-    func setUniverses(_ universes: [Universe]) {
+    func setUniverses(_ universes: [Universe], selected: String = "") {
         self.universes = universes
         
         universesCollectionView.reloadData()
         
-        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [weak self] _ in
-            guard let indexPath = self?.selectedIndex else { return }
-            
-            if let cell = self?.universesCollectionView.cellForItem(at: indexPath) as? UniverseCollectionViewCell {
-                cell.setSelected(true)
-                self?.universesCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: .top)
+        if !selected.isEmpty {
+            if let indexOfSelected = universes.firstIndex(where: { $0.name == selected }) {
+                let target = IndexPath(row: indexOfSelected, section: 0)
+                selectedIndex = target
+                
+                delay(time: 0.8) { [weak self] in
+                    self?.universesCollectionView.scrollToItem(at: target, at: .right, animated: true)
+                    self?.delay(time: 0.2) {
+                        self?.selectCell(at: target)
+                    }
+                }
             }
+        } else {
+            delay(time: 0.5) { [weak self] in
+                self?.selectCell(at: self?.selectedIndex ?? IndexPath(row: 0, section: 0))
+            }
+        }
+    }
+    
+    func selectCell(at indexPath: IndexPath) {
+        if let cell = universesCollectionView.cellForItem(at: indexPath) as? UniverseCollectionViewCell {
+            cell.setSelected(true)
+            universesCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: .top)
+        }
+    }
+    
+    func delay(time: TimeInterval, completion: @escaping () -> Void) {
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
+            completion()
         }
     }
 }
