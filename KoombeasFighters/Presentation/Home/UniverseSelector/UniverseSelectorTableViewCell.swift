@@ -16,7 +16,7 @@ class UniverseSelectorTableViewCell: UITableViewCell {
         setupCollection()
     }
     
-    let hardDataSource = ["All", "Donkey Kong", "The Legend Of Zelda", "Donkey Kong", "The Legend Of Zelda"]
+    private var universes: [Universe] = []
     
     func setupCollection() {
         universesCollectionView.register(UniverseCollectionViewCell.self)
@@ -34,11 +34,17 @@ class UniverseSelectorTableViewCell: UITableViewCell {
             universesCollectionView.collectionViewLayout = flowLayout
         }
     }
+    
+    func setUniverses(_ universes: [Universe]) {
+        self.universes = universes
+        
+        universesCollectionView.reloadData()
+    }
 }
 
 extension UniverseSelectorTableViewCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return hardDataSource.count
+        return universes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -46,12 +52,12 @@ extension UniverseSelectorTableViewCell: UICollectionViewDataSource, UICollectio
         cell.indexPath = indexPath
         cell.delegate = self
         
-        cell.setName(hardDataSource[indexPath.row])
+        cell.setName(universes[indexPath.row].name)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let name = hardDataSource[indexPath.row]
+        let name = universes[indexPath.row].name
         var baseWidth = 74
         
         if name.count > 10 {

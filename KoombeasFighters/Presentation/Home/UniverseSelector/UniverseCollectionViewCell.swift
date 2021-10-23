@@ -25,7 +25,6 @@ class UniverseCollectionViewCell: UICollectionViewCell {
     
     func setName(_ name: String) {
         universeNameLabel.text = name
-        //universeButton.sizeToFit()
     }
 
     @IBAction func didTapUniverse(_ sender: UIButton) {
