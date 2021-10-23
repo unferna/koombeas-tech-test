@@ -94,6 +94,17 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         cell.setFighter(fighter)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let fighter = fighters[safe: indexPath.row] else { return }
+        
+        let detailsStoryboard = UIStoryboard(name: "FighterDetailViewController", bundle: nil)
+        let detailsVC = detailsStoryboard.instantiateInitialViewController() as! FighterDetailViewController
+        
+        detailsVC.fighter = fighter
+        
+        navigationController?.pushViewController(detailsVC, animated: true)
+    }
 }
 
 extension HomeViewController: UniverseSelectorTableViewCellDelegate {

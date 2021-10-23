@@ -44,6 +44,8 @@
 		A83EAE282723A4E0000707E9 /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83EAE272723A4E0000707E9 /* Commons.swift */; };
 		A83EAE2A2723ABB2000707E9 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83EAE292723ABB2000707E9 /* Int+Extensions.swift */; };
 		A83EAE2C2723ADD2000707E9 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83EAE2B2723ADD2000707E9 /* Collection+Extensions.swift */; };
+		A83EAE2F2723BF48000707E9 /* FighterDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A83EAE2E2723BF48000707E9 /* FighterDetailViewController.storyboard */; };
+		A83EAE312723BF58000707E9 /* FighterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83EAE302723BF58000707E9 /* FighterDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +106,8 @@
 		A83EAE272723A4E0000707E9 /* Commons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
 		A83EAE292723ABB2000707E9 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		A83EAE2B2723ADD2000707E9 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
+		A83EAE2E2723BF48000707E9 /* FighterDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FighterDetailViewController.storyboard; sourceTree = "<group>"; };
+		A83EAE302723BF58000707E9 /* FighterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FighterDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +303,7 @@
 		A83EAE0E27236B31000707E9 /* Fighter */ = {
 			isa = PBXGroup;
 			children = (
+				A83EAE2D2723BF30000707E9 /* Detail */,
 				A83EAE0F27236B4B000707E9 /* FighterTableViewCell.swift */,
 				A83EAE1027236B4B000707E9 /* FighterTableViewCell.xib */,
 			);
@@ -312,6 +317,15 @@
 				A83EAE1F2723852D000707E9 /* Fighter.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A83EAE2D2723BF30000707E9 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				A83EAE2E2723BF48000707E9 /* FighterDetailViewController.storyboard */,
+				A83EAE302723BF58000707E9 /* FighterDetailViewController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,6 +438,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A83EAE2F2723BF48000707E9 /* FighterDetailViewController.storyboard in Resources */,
 				A83EADE1272341EC000707E9 /* OnboardingViewController.storyboard in Resources */,
 				A83EADF12723502F000707E9 /* OnboardingSlideCollectionViewCell.xib in Resources */,
 				A83EADFE27235E8B000707E9 /* HomeViewController.storyboard in Resources */,
@@ -464,6 +479,7 @@
 				A83EAE2227238733000707E9 /* HomeDataService.swift in Sources */,
 				A83EAE2C2723ADD2000707E9 /* Collection+Extensions.swift in Sources */,
 				A83EADB1272341A7000707E9 /* AppDelegate.swift in Sources */,
+				A83EAE312723BF58000707E9 /* FighterDetailViewController.swift in Sources */,
 				A83EADF02723502F000707E9 /* OnboardingSlideCollectionViewCell.swift in Sources */,
 				A83EADF427235129000707E9 /* CarouselCollectionLayout.swift in Sources */,
 				A83EADB3272341A7000707E9 /* SceneDelegate.swift in Sources */,

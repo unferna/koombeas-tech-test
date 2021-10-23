@@ -15,4 +15,5 @@ struct Fighter: Codable {
     var price: String
     var rate: Int
     var downloads: String
+    var description: String
 }
