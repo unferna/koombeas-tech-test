@@ -20,4 +20,22 @@ class LocalStorage {
     public func markOnboardingAsSeen() {
         UserDefaults.standard.set(true, forKey: DataKeys.onboardingSeen)
     }
+    
+    public func saveUniverses(_ universes: Data) {
+        UserDefaults.standard.set(universes, forKey: DataKeys.cachedUniverses)
+    }
+    
+    public func saveFighters(_ fighters: Data) {
+        UserDefaults.standard.set(fighters, forKey: DataKeys.cachedFighters)
+    }
+    
+    public func getUniverses() -> Data? {
+        guard let universesData = UserDefaults.standard.value(forKey: DataKeys.cachedUniverses) as? Data else { return nil }
+        return universesData
+    }
+    
+    public func getFighters() -> Data? {
+        guard let fightersData = UserDefaults.standard.value(forKey: DataKeys.cachedFighters) as? Data else { return nil }
+        return fightersData
+    }
 }

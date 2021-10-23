@@ -15,6 +15,7 @@ enum FighterFilter: String {
 
 class HomeDataService {
     private let network = NetworkManager()
+    private let networkMonitor = NetworkMonitor.shared
     private let queue: DispatchQueue!
     
     static let shared = HomeDataService()
@@ -26,18 +27,37 @@ class HomeDataService {
     func getUniverses(completion: @escaping ([Universe]) -> Void, failure: @escaping (GeneralError) -> Void) {
         // Load Universes
         let universesAPI = "https://593cdf8fb56f410011e7e7a9.mockapi.io/universes"
-        network.request(url: universesAPI, completion: { data in
+        
+        if networkMonitor.isReachable {
+            network.request(url: universesAPI, completion: { data in
+                do {
+                    let universes = try JSONDecoder().decode([Universe].self, from: data)
+                    LocalStorage.shared.saveUniverses(data)
+                    
+                    completion(universes)
+                    
+                } catch {
+                    failure(GeneralError.message(string: "Couldn't convert invalid response"))
+                }
+                
+            }, failure: { error in
+                failure(error)
+            })
+        
+        } else {
             do {
-                let fighters = try JSONDecoder().decode([Universe].self, from: data)
-                completion(fighters)
+                if let universesData = LocalStorage.shared.getUniverses() {
+                    let universes = try JSONDecoder().decode([Universe].self, from: universesData)
+                    completion(universes)
+                    
+                } else {
+                    failure(GeneralError.message(string: "There aren't universes saved"))
+                }
                 
             } catch {
-                failure(GeneralError.message(string: "Couldn't convert invalid response"))
+                failure(GeneralError.message(string: "There aren't universes saved"))
             }
-            
-        }, failure: { error in
-            failure(error)
-        })
+        }
     }
     
     func getFighters(filteredBy: FighterFilter = .all, withValue: String = "", completion: @escaping ([Fighter]) -> Void, failure: @escaping (GeneralError) -> Void) {
@@ -55,18 +75,36 @@ class HomeDataService {
             }
         }
         
-        network.request(url: fightersAPI, completion: { data in
+        if networkMonitor.isReachable {
+            network.request(url: fightersAPI, completion: { data in
+                do {
+                    let fighters = try JSONDecoder().decode([Fighter].self, from: data)
+                    LocalStorage.shared.saveFighters(data)
+                    
+                    completion(fighters)
+                    
+                } catch {
+                    failure(GeneralError.message(string: "Couldn't convert invalid response"))
+                }
+                
+            }, failure: { error in
+                failure(error)
+            })
+        
+        } else {
             do {
-                let fighters = try JSONDecoder().decode([Fighter].self, from: data)
-                completion(fighters)
+                if let universesData = LocalStorage.shared.getFighters() {
+                    let fighters = try JSONDecoder().decode([Fighter].self, from: universesData)
+                    completion(fighters)
+                    
+                } else {
+                    failure(GeneralError.message(string: "There aren't fighters saved"))
+                }
                 
             } catch {
-                failure(GeneralError.message(string: "Couldn't convert invalid response"))
+                failure(GeneralError.message(string: "There aren't fighters saved"))
             }
-            
-        }, failure: { error in
-            failure(error)
-        })
+        }
     }
     
     func loadHome(completion: @escaping ([Universe], [Fighter]) -> Void, failure: @escaping (GeneralError) -> Void) {

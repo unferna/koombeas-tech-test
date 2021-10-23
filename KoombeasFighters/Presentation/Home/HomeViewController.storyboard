@@ -84,18 +84,38 @@
                                     <constraint firstItem="EX5-1s-CqW" firstAttribute="leading" secondItem="w9i-aA-d1k" secondAttribute="leading" constant="16" id="m5h-vZ-hxR"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbh-bq-TYm">
+                                <rect key="frame" x="0.0" y="832" width="414" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No internet connection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ywe-4F-bl7">
+                                        <rect key="frame" x="133" y="6.5" width="148" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstItem="Ywe-4F-bl7" firstAttribute="centerY" secondItem="cbh-bq-TYm" secondAttribute="centerY" id="Y3N-Th-91L"/>
+                                    <constraint firstItem="Ywe-4F-bl7" firstAttribute="centerX" secondItem="cbh-bq-TYm" secondAttribute="centerX" id="qTf-9f-bS7"/>
+                                    <constraint firstAttribute="height" constant="30" id="yH6-SP-35X"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aLK-Me-Lsc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="w9i-aA-d1k" firstAttribute="leading" secondItem="aLK-Me-Lsc" secondAttribute="leading" id="0rr-by-ykN"/>
+                            <constraint firstItem="aLK-Me-Lsc" firstAttribute="bottom" secondItem="cbh-bq-TYm" secondAttribute="bottom" id="1pG-PR-hBV"/>
                             <constraint firstItem="w9i-aA-d1k" firstAttribute="top" secondItem="aLK-Me-Lsc" secondAttribute="top" id="8o8-4L-Jlv"/>
+                            <constraint firstItem="aLK-Me-Lsc" firstAttribute="trailing" secondItem="cbh-bq-TYm" secondAttribute="trailing" id="DJ2-2i-ciP"/>
                             <constraint firstItem="aLK-Me-Lsc" firstAttribute="trailing" secondItem="Cw0-JX-wiT" secondAttribute="trailing" id="JxC-27-mBu"/>
                             <constraint firstItem="aLK-Me-Lsc" firstAttribute="trailing" secondItem="SWr-OI-Ir3" secondAttribute="trailing" id="Pxk-7K-b5z"/>
                             <constraint firstItem="aLK-Me-Lsc" firstAttribute="bottom" secondItem="SWr-OI-Ir3" secondAttribute="bottom" id="UVO-nU-abQ"/>
                             <constraint firstItem="SWr-OI-Ir3" firstAttribute="leading" secondItem="aLK-Me-Lsc" secondAttribute="leading" id="Y0y-dF-OVP"/>
                             <constraint firstItem="Cw0-JX-wiT" firstAttribute="leading" secondItem="gPN-37-jBm" secondAttribute="leading" id="YMF-HI-QYv"/>
                             <constraint firstItem="Cw0-JX-wiT" firstAttribute="top" secondItem="gPN-37-jBm" secondAttribute="top" id="aL7-EE-O29"/>
+                            <constraint firstItem="cbh-bq-TYm" firstAttribute="leading" secondItem="aLK-Me-Lsc" secondAttribute="leading" id="kyA-FX-LVB"/>
                             <constraint firstItem="w9i-aA-d1k" firstAttribute="top" secondItem="Cw0-JX-wiT" secondAttribute="bottom" id="m9I-Ed-GLl"/>
                             <constraint firstItem="aLK-Me-Lsc" firstAttribute="trailing" secondItem="w9i-aA-d1k" secondAttribute="trailing" id="q9B-Hq-849"/>
                             <constraint firstItem="SWr-OI-Ir3" firstAttribute="top" secondItem="aLK-Me-Lsc" secondAttribute="top" id="t5y-sT-wbH"/>
@@ -104,6 +124,7 @@
                     <navigationItem key="navigationItem" id="BdQ-2t-RbO"/>
                     <connections>
                         <outlet property="headerView" destination="w9i-aA-d1k" id="FY9-VI-S5N"/>
+                        <outlet property="noInternetWarningView" destination="cbh-bq-TYm" id="Dg8-OQ-NYa"/>
                         <outlet property="tableView" destination="SWr-OI-Ir3" id="Jkm-LY-ETP"/>
                     </connections>
                 </viewController>
@@ -116,6 +137,9 @@
         <image name="line.3.horizontal.decrease.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

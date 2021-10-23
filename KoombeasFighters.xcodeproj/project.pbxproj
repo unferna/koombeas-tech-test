@@ -50,6 +50,7 @@
 		A83EAE362723D64C000707E9 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83EAE352723D64C000707E9 /* FilterViewController.swift */; };
 		A83EAE3A2723D993000707E9 /* SortByItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83EAE382723D993000707E9 /* SortByItemTableViewCell.swift */; };
 		A83EAE3B2723D993000707E9 /* SortByItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83EAE392723D993000707E9 /* SortByItemTableViewCell.xib */; };
+		A83EAE3D27244692000707E9 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83EAE3C27244692000707E9 /* NetworkMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		A83EAE352723D64C000707E9 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		A83EAE382723D993000707E9 /* SortByItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortByItemTableViewCell.swift; sourceTree = "<group>"; };
 		A83EAE392723D993000707E9 /* SortByItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortByItemTableViewCell.xib; sourceTree = "<group>"; };
+		A83EAE3C27244692000707E9 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				A83EADF327235129000707E9 /* CarouselCollectionLayout.swift */,
+				A83EAE3C27244692000707E9 /* NetworkMonitor.swift */,
 				A83EADF52723523F000707E9 /* UICollectionView+Extensions.swift */,
 				A83EAE132723713A000707E9 /* UITableView+Extensions.swift */,
 				A83EAE03272367A1000707E9 /* UIVIew+Extensions.swift */,
@@ -513,6 +516,7 @@
 				A83EADF02723502F000707E9 /* OnboardingSlideCollectionViewCell.swift in Sources */,
 				A83EADF427235129000707E9 /* CarouselCollectionLayout.swift in Sources */,
 				A83EADB3272341A7000707E9 /* SceneDelegate.swift in Sources */,
+				A83EAE3D27244692000707E9 /* NetworkMonitor.swift in Sources */,
 				A83EAE0827236B03000707E9 /* UniverseSelectorTableViewCell.swift in Sources */,
 				A83EAE1127236B4B000707E9 /* FighterTableViewCell.swift in Sources */,
 				A83EAE0027235E98000707E9 /* HomeViewController.swift in Sources */,

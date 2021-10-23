@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import Combine
 
 class FighterDetailViewController: UIViewController {
     @IBOutlet weak var titleViewLabel: UILabel!
@@ -24,10 +25,14 @@ class FighterDetailViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var scrollViewContent: UIView!
+    @IBOutlet weak var noInternetWarningView: UIView!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
+    private let networkMonitor = NetworkMonitor.shared
+    private var cancellable: Cancellable!
     
     var fighter: Fighter!
     
@@ -35,6 +40,13 @@ class FighterDetailViewController: UIViewController {
         super.viewDidLoad()
         
         titleViewLabel.text = "Fighters"
+        
+        cancellable = networkMonitor.publisherNetworkAvailable
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.isHidden, on: noInternetWarningView)
+        
+        noInternetWarningView.isHidden = networkMonitor.isReachable
+        
         loadData()
     }
     
@@ -87,5 +99,9 @@ class FighterDetailViewController: UIViewController {
         ]
         
         descriptionLabel.attributedText = NSMutableAttributedString(string: fighter.description, attributes: attributes)
+    }
+    
+    deinit {
+        cancellable.cancel()
     }
 }

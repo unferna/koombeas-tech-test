@@ -205,6 +205,23 @@
                                     <constraint firstAttribute="height" constant="56" id="qCD-KJ-wsQ"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s24-Nh-Lia">
+                                <rect key="frame" x="0.0" y="832" width="414" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No internet connection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMj-Kq-zoq">
+                                        <rect key="frame" x="133" y="6.5" width="148" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstItem="qMj-Kq-zoq" firstAttribute="centerY" secondItem="s24-Nh-Lia" secondAttribute="centerY" id="0xj-fF-Pfo"/>
+                                    <constraint firstAttribute="height" constant="30" id="Vkv-3b-F3X"/>
+                                    <constraint firstItem="qMj-Kq-zoq" firstAttribute="centerX" secondItem="s24-Nh-Lia" secondAttribute="centerX" id="ZLF-vi-VrR"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sEx-IG-ELX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -216,11 +233,14 @@
                             <constraint firstItem="sEx-IG-ELX" firstAttribute="bottom" secondItem="gRz-a2-Z6u" secondAttribute="bottom" id="8XQ-Ba-UAO"/>
                             <constraint firstItem="d1g-FE-KHz" firstAttribute="top" secondItem="8V2-uK-Cwk" secondAttribute="bottom" id="CUj-IB-V64"/>
                             <constraint firstItem="8V2-uK-Cwk" firstAttribute="top" secondItem="eUS-nK-Mr8" secondAttribute="bottom" id="JTL-8x-eUz"/>
+                            <constraint firstItem="s24-Nh-Lia" firstAttribute="trailing" secondItem="sEx-IG-ELX" secondAttribute="trailing" id="LvB-Jo-ZPc"/>
                             <constraint firstItem="sEx-IG-ELX" firstAttribute="trailing" secondItem="gRz-a2-Z6u" secondAttribute="trailing" id="dXB-k5-V85"/>
                             <constraint firstItem="eUS-nK-Mr8" firstAttribute="leading" secondItem="wQn-D0-mYY" secondAttribute="leading" id="dpk-qy-SY2"/>
+                            <constraint firstItem="sEx-IG-ELX" firstAttribute="bottom" secondItem="s24-Nh-Lia" secondAttribute="bottom" id="gg8-xp-qlK"/>
                             <constraint firstItem="sEx-IG-ELX" firstAttribute="trailing" secondItem="eUS-nK-Mr8" secondAttribute="trailing" id="jsn-Rc-BBa"/>
                             <constraint firstItem="8V2-uK-Cwk" firstAttribute="leading" secondItem="sEx-IG-ELX" secondAttribute="leading" id="qnC-U5-nu3"/>
                             <constraint firstItem="eUS-nK-Mr8" firstAttribute="top" secondItem="wQn-D0-mYY" secondAttribute="top" id="whf-Aa-gAf"/>
+                            <constraint firstItem="s24-Nh-Lia" firstAttribute="leading" secondItem="sEx-IG-ELX" secondAttribute="leading" id="zJr-Nl-ngg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PA9-s2-6AJ"/>
@@ -230,6 +250,7 @@
                         <outlet property="fighterImageView" destination="PPu-NS-4kf" id="q9u-tf-kxb"/>
                         <outlet property="mainScrollView" destination="gRz-a2-Z6u" id="cTI-Zb-E5i"/>
                         <outlet property="nameLabel" destination="KDl-Di-QvZ" id="Ud2-LE-rqb"/>
+                        <outlet property="noInternetWarningView" destination="s24-Nh-Lia" id="yd1-OC-cr1"/>
                         <outlet property="priceContainerView" destination="O7L-PT-Ym4" id="akc-KU-y7Y"/>
                         <outlet property="priceLabel" destination="wlj-w9-JaM" id="ZWk-pj-kE1"/>
                         <outlet property="scrollViewContent" destination="d1g-FE-KHz" id="TfC-bJ-p9F"/>
@@ -255,6 +276,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

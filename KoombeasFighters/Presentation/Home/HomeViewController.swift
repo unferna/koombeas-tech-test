@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import Combine
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noInternetWarningView: UIView!
     
+    private let networkMonitor = NetworkMonitor.shared
+    private var cancellable: Cancellable!
     private let refreshControl = UIRefreshControl()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -29,6 +33,12 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        cancellable = networkMonitor.publisherNetworkAvailable
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.isHidden, on: noInternetWarningView)
+        
+        noInternetWarningView.isHidden = networkMonitor.isReachable
+        
         headerView.addShadow(color: UIColor(red: 0, green: 0, blue: 0, alpha: 0.24), blur: 4, position: CGPoint(x: 0, y: 6))
         
         setupTable()
@@ -102,6 +112,10 @@ class HomeViewController: UIViewController {
                 break
         }
     }
+    
+    deinit {
+        cancellable.cancel()
+    }
 }
 
 extension HomeViewController: HomeView {
@@ -119,7 +133,7 @@ extension HomeViewController: HomeView {
     }
     
     func showError(error: GeneralError) {
-        
+        print(error)
     }
 }
 
