@@ -61,25 +61,25 @@ class HomeDataService {
     }
     
     func getFighters(filteredBy: FighterFilter = .all, withValue: String = "", completion: @escaping ([Fighter]) -> Void, failure: @escaping (GeneralError) -> Void) {
-        var fightersAPI = "https://593cdf8fb56f410011e7e7a9.mockapi.io/fighters"
-        
-        if filteredBy != .all && !withValue.isEmpty {
-            if filteredBy == .rate {
-                if let intValue = Int(withValue) {
-                    fightersAPI += "?rate=\( intValue )"
-                }
-            
-            } else {
-                LocalStorage.shared.saveUniverseSelection(withValue)
-                
-                let encodedParam = withValue.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-                fightersAPI += "?universe=\( encodedParam ?? "" )"
-            }
-        }
         
         if networkMonitor.isReachable {
-            if filteredBy == .all {
-                LocalStorage.shared.saveUniverseSelection("")
+            var fightersAPI = "https://593cdf8fb56f410011e7e7a9.mockapi.io/fighters"
+            
+            if filteredBy != .all && !withValue.isEmpty {
+                if filteredBy == .rate {
+                    if let intValue = Int(withValue) {
+                        fightersAPI += "?rate=\( intValue )"
+                    }
+                
+                } else {
+                    LocalStorage.shared.saveUniverseSelection(withValue)
+                    
+                    let encodedParam = withValue.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+                    fightersAPI += "?universe=\( encodedParam ?? "" )"
+                }
+                
+            } else {
+                LocalStorage.shared.saveUniverseSelection("none")
             }
             
             network.request(url: fightersAPI, completion: { data in

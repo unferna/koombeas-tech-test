@@ -42,12 +42,12 @@ class UniverseSelectorTableViewCell: UITableViewCell {
         }
     }
     
-    func setUniverses(_ universes: [Universe], selected: String = "") {
+    func setUniverses(_ universes: [Universe], selected: String = "none") {
         self.universes = universes
         
         universesCollectionView.reloadData()
         
-        if !selected.isEmpty {
+        if selected != "none" && !selected.isEmpty {
             if let indexOfSelected = universes.firstIndex(where: { $0.name == selected }) {
                 let target = IndexPath(row: indexOfSelected, section: 0)
                 selectedIndex = target

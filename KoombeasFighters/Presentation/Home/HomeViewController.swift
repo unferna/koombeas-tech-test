@@ -127,11 +127,14 @@ extension HomeViewController: HomeView {
         self.fighters = fighters
         sortFighters()
         tableView.reloadSections([1], with: .automatic)
+        refreshControl.endRefreshing()
     }
     
     func homeLoaded(universes: [Universe], fighters: [Fighter]) {
         self.universes = universes
         self.fighters = fighters
+        
+        universeNameSelected = LocalStorage.shared.universeSelection
         tableView.reloadData()
         refreshControl.endRefreshing()
     }
