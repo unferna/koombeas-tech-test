@@ -18,6 +18,8 @@ class HomeViewController: UIViewController {
     var universes: [Universe] = []
     var fighters: [Fighter] = []
     
+    var currentFilter: (sorting: SortItemsData, rate: Int) = (sorting: .none, rate: 0)
+    
     private lazy var presenter: HomePresenter = {
         return HomePresenter(withView: self)
     } ()
@@ -46,13 +48,55 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func didTapFilters(_ sender: UIButton) {
+        let filtersStoryboard = UIStoryboard(name: "FilterViewController", bundle: nil)
+        let filterVC = filtersStoryboard.instantiateInitialViewController() as! FilterViewController
         
+        filterVC.delegate = self
+        filterVC.currentFilter = currentFilter
+        present(filterVC, animated: true)
+    }
+    
+    func sortFighters() {
+        switch currentFilter.sorting {
+            case .name:
+                fighters.sort {
+                    $0.name < $1.name
+                }
+            
+            case .price:
+                fighters.sort {
+                    guard
+                        let price1 = Int($0.price),
+                        let price2 = Int($1.price)
+                    else { return false }
+                    
+                    return price1 < price2
+                }
+                
+            case .rate:
+                fighters.sort {
+                    $0.rate < $1.rate
+                }
+                
+            case .downloads:
+                fighters.sort {
+                    guard
+                        let downloads1 = Int($0.downloads),
+                        let downloads2 = Int($1.downloads)
+                    else { return false }
+                    
+                    return downloads1 < downloads2
+                }
+            case .none:
+                break
+        }
     }
 }
 
 extension HomeViewController: HomeView {
     func fightersFiltered(fighters: [Fighter]) {
         self.fighters = fighters
+        sortFighters()
         tableView.reloadSections([1], with: .automatic)
     }
     
@@ -111,6 +155,26 @@ extension HomeViewController: UniverseSelectorTableViewCellDelegate {
     func didUniverseSelected(at indexPath: IndexPath) {
         if let universe = universes[safe: indexPath.row] {
             presenter.filterFighters(by: .universe, withValue: universe.name)
+            currentFilter = (sorting: .none, rate: 0)
+        }
+    }
+}
+
+extension HomeViewController: FilterViewControllerDelegate {
+    func applyFilters(criteria: SortItemsData, rate: Int) {
+        currentFilter = (sorting: criteria, rate: rate)
+        
+        // Reset
+        if criteria == .none {
+            presenter.filterFighters(by: .universe, withValue: "All")
+        }
+        
+        if rate > 0 {
+            presenter.filterFighters(by: .rate, withValue: String(rate))
+        
+        } else {
+            sortFighters()
+            tableView.reloadSections([1], with: .automatic)
         }
     }
 }

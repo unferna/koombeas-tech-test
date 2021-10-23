@@ -46,6 +46,10 @@
 		A83EAE2C2723ADD2000707E9 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83EAE2B2723ADD2000707E9 /* Collection+Extensions.swift */; };
 		A83EAE2F2723BF48000707E9 /* FighterDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A83EAE2E2723BF48000707E9 /* FighterDetailViewController.storyboard */; };
 		A83EAE312723BF58000707E9 /* FighterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83EAE302723BF58000707E9 /* FighterDetailViewController.swift */; };
+		A83EAE342723D642000707E9 /* FilterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A83EAE332723D642000707E9 /* FilterViewController.storyboard */; };
+		A83EAE362723D64C000707E9 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83EAE352723D64C000707E9 /* FilterViewController.swift */; };
+		A83EAE3A2723D993000707E9 /* SortByItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83EAE382723D993000707E9 /* SortByItemTableViewCell.swift */; };
+		A83EAE3B2723D993000707E9 /* SortByItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83EAE392723D993000707E9 /* SortByItemTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +112,10 @@
 		A83EAE2B2723ADD2000707E9 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		A83EAE2E2723BF48000707E9 /* FighterDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FighterDetailViewController.storyboard; sourceTree = "<group>"; };
 		A83EAE302723BF58000707E9 /* FighterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FighterDetailViewController.swift; sourceTree = "<group>"; };
+		A83EAE332723D642000707E9 /* FilterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FilterViewController.storyboard; sourceTree = "<group>"; };
+		A83EAE352723D64C000707E9 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		A83EAE382723D993000707E9 /* SortByItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortByItemTableViewCell.swift; sourceTree = "<group>"; };
+		A83EAE392723D993000707E9 /* SortByItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortByItemTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +289,7 @@
 		A83EADF727235C14000707E9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A83EAE322723D624000707E9 /* Filter */,
 				A83EAE0527236AC8000707E9 /* UniverseSelector */,
 				A83EAE0E27236B31000707E9 /* Fighter */,
 				A83EADFD27235E8B000707E9 /* HomeViewController.storyboard */,
@@ -326,6 +335,25 @@
 				A83EAE302723BF58000707E9 /* FighterDetailViewController.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		A83EAE322723D624000707E9 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				A83EAE372723D962000707E9 /* SortByItem */,
+				A83EAE332723D642000707E9 /* FilterViewController.storyboard */,
+				A83EAE352723D64C000707E9 /* FilterViewController.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		A83EAE372723D962000707E9 /* SortByItem */ = {
+			isa = PBXGroup;
+			children = (
+				A83EAE382723D993000707E9 /* SortByItemTableViewCell.swift */,
+				A83EAE392723D993000707E9 /* SortByItemTableViewCell.xib */,
+			);
+			path = SortByItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,6 +475,8 @@
 				A83EADBD272341AA000707E9 /* LaunchScreen.storyboard in Resources */,
 				A83EAE0D27236B23000707E9 /* UniverseCollectionViewCell.xib in Resources */,
 				A83EAE0927236B03000707E9 /* UniverseSelectorTableViewCell.xib in Resources */,
+				A83EAE3B2723D993000707E9 /* SortByItemTableViewCell.xib in Resources */,
+				A83EAE342723D642000707E9 /* FilterViewController.storyboard in Resources */,
 				A83EADE9272346C9000707E9 /* Roboto-Regular.ttf in Resources */,
 				A83EADBA272341AA000707E9 /* Assets.xcassets in Resources */,
 				A83EAE1227236B4B000707E9 /* FighterTableViewCell.xib in Resources */,
@@ -488,10 +518,12 @@
 				A83EAE0027235E98000707E9 /* HomeViewController.swift in Sources */,
 				A83EAE202723852D000707E9 /* Fighter.swift in Sources */,
 				A83EAE04272367A1000707E9 /* UIVIew+Extensions.swift in Sources */,
+				A83EAE3A2723D993000707E9 /* SortByItemTableViewCell.swift in Sources */,
 				A83EAE282723A4E0000707E9 /* Commons.swift in Sources */,
 				A83EAE1E272384DF000707E9 /* Universe.swift in Sources */,
 				A83EADF927235C6D000707E9 /* LocalStorage.swift in Sources */,
 				A83EAE262723A459000707E9 /* HomePresenter.swift in Sources */,
+				A83EAE362723D64C000707E9 /* FilterViewController.swift in Sources */,
 				A83EADEB27234B3A000707E9 /* OnboardingViewController.swift in Sources */,
 				A83EAE1B272384A2000707E9 /* NetworkManager.swift in Sources */,
 				A83EAE2A2723ABB2000707E9 /* Int+Extensions.swift in Sources */,

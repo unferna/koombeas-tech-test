@@ -97,9 +97,18 @@
                                     <constraint firstAttribute="bottom" secondItem="M9i-sw-QTN" secondAttribute="bottom" id="uqP-o1-Gyt"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hjp-Ke-Jqj">
+                                <rect key="frame" x="0.0" y="88" width="320" height="1"/>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="ehy-7K-igN"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="hjp-Ke-Jqj" secondAttribute="bottom" id="CFx-en-T8T"/>
+                            <constraint firstAttribute="trailing" secondItem="hjp-Ke-Jqj" secondAttribute="trailing" id="O8B-JW-KzY"/>
                             <constraint firstAttribute="trailing" secondItem="AEx-Rx-DjK" secondAttribute="trailing" constant="22" id="RDe-UL-7ao"/>
                             <constraint firstAttribute="height" constant="89" id="Y0c-rW-ufe"/>
                             <constraint firstItem="dNk-LA-egb" firstAttribute="leading" secondItem="EBh-K9-B1z" secondAttribute="trailing" constant="13" id="fdN-d8-BKN"/>
@@ -107,6 +116,7 @@
                             <constraint firstItem="dNk-LA-egb" firstAttribute="centerY" secondItem="EBh-K9-B1z" secondAttribute="centerY" id="rHZ-eo-a2p"/>
                             <constraint firstItem="EBh-K9-B1z" firstAttribute="top" secondItem="amR-tu-N8o" secondAttribute="top" id="wm4-sD-e71"/>
                             <constraint firstItem="EBh-K9-B1z" firstAttribute="leading" secondItem="amR-tu-N8o" secondAttribute="leading" constant="13" id="xOk-NX-1Zj"/>
+                            <constraint firstItem="hjp-Ke-Jqj" firstAttribute="leading" secondItem="amR-tu-N8o" secondAttribute="leading" id="zTb-VJ-hAs"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -132,7 +142,7 @@
     </objects>
     <resources>
         <namedColor name="mainColor">
-            <color red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.4779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

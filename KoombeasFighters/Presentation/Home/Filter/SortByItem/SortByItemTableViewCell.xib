@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="SortByItemTableViewCell" customModule="KoombeasFighters" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVT-ha-pfc">
+                        <rect key="frame" x="33" y="18" width="20" height="20"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dot-zZ-syx">
+                                <rect key="frame" x="5" y="5" width="10" height="10"/>
+                                <color key="backgroundColor" name="mainColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="CRW-Nb-wv7"/>
+                                    <constraint firstAttribute="width" constant="10" id="nSE-nq-PG6"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="2Ye-fe-0cU"/>
+                            <constraint firstItem="Dot-zZ-syx" firstAttribute="centerX" secondItem="tVT-ha-pfc" secondAttribute="centerX" id="44k-YR-oi0"/>
+                            <constraint firstAttribute="width" constant="20" id="OQR-Jm-EnS"/>
+                            <constraint firstItem="Dot-zZ-syx" firstAttribute="centerY" secondItem="tVT-ha-pfc" secondAttribute="centerY" id="TRB-Tn-rUq"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ugl-A7-EXb">
+                        <rect key="frame" x="79" y="17" width="224" height="24"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yci-y5-YUv">
+                        <rect key="frame" x="20" y="59" width="300" height="1"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.12" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="kZV-EA-Lxp"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Ugl-A7-EXb" firstAttribute="leading" secondItem="tVT-ha-pfc" secondAttribute="trailing" constant="26" id="4Lt-vN-SYF"/>
+                    <constraint firstItem="yci-y5-YUv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="PYe-UE-JJB"/>
+                    <constraint firstItem="tVT-ha-pfc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="33" id="RXQ-kV-NXT"/>
+                    <constraint firstItem="Ugl-A7-EXb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="cGK-Qa-1PW"/>
+                    <constraint firstItem="tVT-ha-pfc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="dyd-QI-Lk3"/>
+                    <constraint firstAttribute="trailing" secondItem="Ugl-A7-EXb" secondAttribute="trailing" constant="17" id="gRv-NB-RZu"/>
+                    <constraint firstItem="yci-y5-YUv" firstAttribute="top" secondItem="Ugl-A7-EXb" secondAttribute="bottom" constant="18" id="ikR-vB-tRk"/>
+                    <constraint firstAttribute="trailing" secondItem="yci-y5-YUv" secondAttribute="trailing" id="jod-UE-DW8"/>
+                    <constraint firstAttribute="bottom" secondItem="yci-y5-YUv" secondAttribute="bottom" id="lD4-cD-hPM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="itemNameLabel" destination="Ugl-A7-EXb" id="Da2-HE-Lq3"/>
+                <outlet property="selectorIndicatorContainerView" destination="tVT-ha-pfc" id="lNn-6V-17s"/>
+                <outlet property="selectorIndicatorView" destination="Dot-zZ-syx" id="y0l-sQ-oGD"/>
+            </connections>
+            <point key="canvasLocation" x="133" y="85"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="mainColor">
+            <color red="0.0" green="0.4779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
