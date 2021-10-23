@@ -7,14 +7,9 @@
 
 import UIKit
 
-protocol UniverseCollectionViewCellDelegate: NSObjectProtocol {
-    func didTapUniverse(at: IndexPath)
-}
-
 class UniverseCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var universeNameLabel: UILabel!
     
-    weak var delegate: UniverseCollectionViewCellDelegate?
     var indexPath: IndexPath!
     
     override func awakeFromNib() {
@@ -25,10 +20,7 @@ class UniverseCollectionViewCell: UICollectionViewCell {
     
     func setName(_ name: String) {
         universeNameLabel.text = name
-    }
-
-    @IBAction func didTapUniverse(_ sender: UIButton) {
-        delegate?.didTapUniverse(at: indexPath)
+        setSelected(false)
     }
     
     func setSelected(_ seleted: Bool) {

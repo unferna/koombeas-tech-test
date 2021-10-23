@@ -7,8 +7,15 @@
 
 import UIKit
 
+protocol UniverseSelectorTableViewCellDelegate: NSObjectProtocol {
+    func didUniverseSelected(at indexPath: IndexPath)
+}
+
 class UniverseSelectorTableViewCell: UITableViewCell {
     @IBOutlet weak var universesCollectionView: UICollectionView!
+    weak var delegate: UniverseSelectorTableViewCellDelegate?
+    
+    var selectedIndex: IndexPath = IndexPath(row: 0, section: 0)
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,6 +46,15 @@ class UniverseSelectorTableViewCell: UITableViewCell {
         self.universes = universes
         
         universesCollectionView.reloadData()
+        
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { [weak self] _ in
+            guard let indexPath = self?.selectedIndex else { return }
+            
+            if let cell = self?.universesCollectionView.cellForItem(at: indexPath) as? UniverseCollectionViewCell {
+                cell.setSelected(true)
+                self?.universesCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: .top)
+            }
+        }
     }
 }
 
@@ -50,9 +66,8 @@ extension UniverseSelectorTableViewCell: UICollectionViewDataSource, UICollectio
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusable(for: indexPath) as UniverseCollectionViewCell
         cell.indexPath = indexPath
-        cell.delegate = self
-        
         cell.setName(universes[indexPath.row].name)
+        
         return cell
     }
     
@@ -71,11 +86,30 @@ extension UniverseSelectorTableViewCell: UICollectionViewDataSource, UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Item selected")
-        print(indexPath)
+        delegate?.didUniverseSelected(at: indexPath)
+        selectedIndex = indexPath
+        (collectionView.cellForItem(at: indexPath) as? UniverseCollectionViewCell)?.setSelected(true)
     }
-}
-
-extension UniverseSelectorTableViewCell: UniverseCollectionViewCellDelegate {
-    func didTapUniverse(at: IndexPath) { }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? UniverseCollectionViewCell {
+            cell.setSelected(false)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        var shouldSelect = true
+        if selectedIndex != indexPath {
+            shouldSelect = false
+        
+        } else {
+            shouldSelect = true
+            selectedIndex = IndexPath(row: 0, section: 0)
+        }
+        
+        if shouldSelect {
+            let item = cell as? UniverseCollectionViewCell
+            item?.setSelected(item?.isSelected ?? false)
+        }
+    }
 }

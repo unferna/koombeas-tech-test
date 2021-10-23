@@ -51,6 +51,11 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: HomeView {
+    func fightersFiltered(fighters: [Fighter]) {
+        self.fighters = fighters
+        tableView.reloadSections([1], with: .automatic)
+    }
+    
     func homeLoaded(universes: [Universe], fighters: [Fighter]) {
         self.universes = universes
         self.fighters = fighters
@@ -78,6 +83,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusable(for: indexPath) as UniverseSelectorTableViewCell
+            cell.delegate = self
             cell.setUniverses(universes)
             
             return cell
@@ -87,5 +93,13 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusable(for: indexPath) as FighterTableViewCell
         cell.setFighter(fighter)
         return cell
+    }
+}
+
+extension HomeViewController: UniverseSelectorTableViewCellDelegate {
+    func didUniverseSelected(at indexPath: IndexPath) {
+        if let universe = universes[safe: indexPath.row] {
+            presenter.filterFighters(by: .universe, withValue: universe.name)
+        }
     }
 }

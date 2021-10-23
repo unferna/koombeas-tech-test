@@ -7,21 +7,20 @@
 
 import Foundation
 
+enum FighterFilter: String {
+    case all = "all"
+    case universe = "universe"
+    case rate = "rate"
+}
+
 class HomeDataService {
     private let network = NetworkManager()
-    
     private let queue: DispatchQueue!
     
     static let shared = HomeDataService()
     
     private init() {
         queue = DispatchQueue(label: "HomeDataServiceQueue")
-    }
-    
-    enum FighterFilter: String {
-        case all = "all"
-        case universe = "universe"
-        case rate = "rate"
     }
     
     func getUniverses(completion: @escaping ([Universe]) -> Void, failure: @escaping (GeneralError) -> Void) {
@@ -51,7 +50,8 @@ class HomeDataService {
                 }
             
             } else {
-                fightersAPI += "?universe=\( withValue )"
+                let encodedParam = withValue.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+                fightersAPI += "?universe=\( encodedParam ?? "" )"
             }
         }
         

@@ -43,6 +43,7 @@
 		A83EAE262723A459000707E9 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83EAE252723A459000707E9 /* HomePresenter.swift */; };
 		A83EAE282723A4E0000707E9 /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83EAE272723A4E0000707E9 /* Commons.swift */; };
 		A83EAE2A2723ABB2000707E9 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83EAE292723ABB2000707E9 /* Int+Extensions.swift */; };
+		A83EAE2C2723ADD2000707E9 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83EAE2B2723ADD2000707E9 /* Collection+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		A83EAE252723A459000707E9 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		A83EAE272723A4E0000707E9 /* Commons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
 		A83EAE292723ABB2000707E9 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		A83EAE2B2723ADD2000707E9 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +269,7 @@
 				A83EAE132723713A000707E9 /* UITableView+Extensions.swift */,
 				A83EAE03272367A1000707E9 /* UIVIew+Extensions.swift */,
 				A83EAE292723ABB2000707E9 /* Int+Extensions.swift */,
+				A83EAE2B2723ADD2000707E9 /* Collection+Extensions.swift */,
 			);
 			path = "Helpers & Extensions";
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				A83EADF62723523F000707E9 /* UICollectionView+Extensions.swift in Sources */,
 				A83EAE142723713A000707E9 /* UITableView+Extensions.swift in Sources */,
 				A83EAE2227238733000707E9 /* HomeDataService.swift in Sources */,
+				A83EAE2C2723ADD2000707E9 /* Collection+Extensions.swift in Sources */,
 				A83EADB1272341A7000707E9 /* AppDelegate.swift in Sources */,
 				A83EADF02723502F000707E9 /* OnboardingSlideCollectionViewCell.swift in Sources */,
 				A83EADF427235129000707E9 /* CarouselCollectionLayout.swift in Sources */,
